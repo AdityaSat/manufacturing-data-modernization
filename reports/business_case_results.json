@@ -1,0 +1,781 @@
+{
+  "annual_downtime_hours": 4000.0,
+  "annual_downtime_cost": 800000.0,
+  "pv_benefit_factor": 2.232670514397841,
+  "pv_opex_factor": 2.598871536851555,
+  "options": {
+    "monitoring": {
+      "name": "Basic monitoring",
+      "implementation": 65000,
+      "annual_opex": 18000,
+      "annual_gross_savings": 96000.0,
+      "steady_annual_net": 78000.0,
+      "annual_hours_avoided": 480.0,
+      "npv": 102556.68171886475,
+      "payback_months": 15.538461538461538,
+      "net_cash": 133000.0,
+      "roi": 1.1176470588235294,
+      "break_even_reduction": 0.06258183134417583,
+      "cash_flows": [
+        {
+          "month": 0,
+          "realization": 0,
+          "discount_factor": 1.0,
+          "benefit": 0,
+          "cost": 65000,
+          "net": -65000,
+          "cumulative": -65000,
+          "present_value": -65000.0
+        },
+        {
+          "month": 1,
+          "realization": 0,
+          "discount_factor": 0.992088943446991,
+          "benefit": 0.0,
+          "cost": 1500.0,
+          "net": -1500.0,
+          "cumulative": -66500.0,
+          "present_value": -1488.1334151704864
+        },
+        {
+          "month": 2,
+          "realization": 0,
+          "discount_factor": 0.9842404717097668,
+          "benefit": 0.0,
+          "cost": 1500.0,
+          "net": -1500.0,
+          "cumulative": -68000.0,
+          "present_value": -1476.3607075646503
+        },
+        {
+          "month": 3,
+          "realization": 0,
+          "discount_factor": 0.9764540896763105,
+          "benefit": 0.0,
+          "cost": 1500.0,
+          "net": -1500.0,
+          "cumulative": -69500.0,
+          "present_value": -1464.6811345144658
+        },
+        {
+          "month": 4,
+          "realization": 0.5,
+          "discount_factor": 0.9687293061514642,
+          "benefit": 4000.0,
+          "cost": 1500.0,
+          "net": 2500.0,
+          "cumulative": -67000.0,
+          "present_value": 2421.8232653786604
+        },
+        {
+          "month": 5,
+          "realization": 0.5,
+          "discount_factor": 0.9610656338259428,
+          "benefit": 4000.0,
+          "cost": 1500.0,
+          "net": 2500.0,
+          "cumulative": -64500.0,
+          "present_value": 2402.664084564857
+        },
+        {
+          "month": 6,
+          "realization": 0.5,
+          "discount_factor": 0.9534625892455922,
+          "benefit": 4000.0,
+          "cost": 1500.0,
+          "net": 2500.0,
+          "cumulative": -62000.0,
+          "present_value": 2383.6564731139806
+        },
+        {
+          "month": 7,
+          "realization": 1,
+          "discount_factor": 0.9459196927808919,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -55500.0,
+          "present_value": 6148.4780030757975
+        },
+        {
+          "month": 8,
+          "realization": 1,
+          "discount_factor": 0.9384364685966974,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -49000.0,
+          "present_value": 6099.837045878533
+        },
+        {
+          "month": 9,
+          "realization": 1,
+          "discount_factor": 0.9310124446222228,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -42500.0,
+          "present_value": 6051.580890044448
+        },
+        {
+          "month": 10,
+          "realization": 1,
+          "discount_factor": 0.9236471525212612,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -36000.0,
+          "present_value": 6003.706491388198
+        },
+        {
+          "month": 11,
+          "realization": 1,
+          "discount_factor": 0.9163401276626397,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -29500.0,
+          "present_value": 5956.210829807158
+        },
+        {
+          "month": 12,
+          "realization": 1,
+          "discount_factor": 0.9090909090909091,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -23000.0,
+          "present_value": 5909.090909090909
+        },
+        {
+          "month": 13,
+          "realization": 1,
+          "discount_factor": 0.9018990394972645,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -16500.0,
+          "present_value": 5862.343756732219
+        },
+        {
+          "month": 14,
+          "realization": 1,
+          "discount_factor": 0.894764065190697,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -10000.0,
+          "present_value": 5815.96642373953
+        },
+        {
+          "month": 15,
+          "realization": 1,
+          "discount_factor": 0.8876855360693732,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": -3500.0,
+          "present_value": 5769.955984450926
+        },
+        {
+          "month": 16,
+          "realization": 1,
+          "discount_factor": 0.8806630055922402,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 3000.0,
+          "present_value": 5724.309536349561
+        },
+        {
+          "month": 17,
+          "realization": 1,
+          "discount_factor": 0.873696030750857,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 9500.0,
+          "present_value": 5679.02419988057
+        },
+        {
+          "month": 18,
+          "realization": 1,
+          "discount_factor": 0.8667841720414474,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 16000.0,
+          "present_value": 5634.097118269408
+        },
+        {
+          "month": 19,
+          "realization": 1,
+          "discount_factor": 0.8599269934371745,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 22500.0,
+          "present_value": 5589.525457341634
+        },
+        {
+          "month": 20,
+          "realization": 1,
+          "discount_factor": 0.8531240623606339,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 29000.0,
+          "present_value": 5545.30640534412
+        },
+        {
+          "month": 21,
+          "realization": 1,
+          "discount_factor": 0.8463749496565661,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 35500.0,
+          "present_value": 5501.43717276768
+        },
+        {
+          "month": 22,
+          "realization": 1,
+          "discount_factor": 0.8396792295647828,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 42000.0,
+          "present_value": 5457.914992171089
+        },
+        {
+          "month": 23,
+          "realization": 1,
+          "discount_factor": 0.8330364796933087,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 48500.0,
+          "present_value": 5414.7371180065065
+        },
+        {
+          "month": 24,
+          "realization": 1,
+          "discount_factor": 0.8264462809917354,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 55000.0,
+          "present_value": 5371.90082644628
+        },
+        {
+          "month": 25,
+          "realization": 1,
+          "discount_factor": 0.8199082177247857,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 61500.0,
+          "present_value": 5329.403415211107
+        },
+        {
+          "month": 26,
+          "realization": 1,
+          "discount_factor": 0.8134218774460882,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 68000.0,
+          "present_value": 5287.242203399574
+        },
+        {
+          "month": 27,
+          "realization": 1,
+          "discount_factor": 0.8069868509721573,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 74500.0,
+          "present_value": 5245.414531319022
+        },
+        {
+          "month": 28,
+          "realization": 1,
+          "discount_factor": 0.8006027323565819,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 81000.0,
+          "present_value": 5203.917760317782
+        },
+        {
+          "month": 29,
+          "realization": 1,
+          "discount_factor": 0.7942691188644154,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 87500.0,
+          "present_value": 5162.7492726187
+        },
+        {
+          "month": 30,
+          "realization": 1,
+          "discount_factor": 0.7879856109467703,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 94000.0,
+          "present_value": 5121.906471154007
+        },
+        {
+          "month": 31,
+          "realization": 1,
+          "discount_factor": 0.7817518122156131,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 100500.0,
+          "present_value": 5081.386779401485
+        },
+        {
+          "month": 32,
+          "realization": 1,
+          "discount_factor": 0.7755673294187581,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 107000.0,
+          "present_value": 5041.187641221927
+        },
+        {
+          "month": 33,
+          "realization": 1,
+          "discount_factor": 0.76943177241506,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 113500.0,
+          "present_value": 5001.30652069789
+        },
+        {
+          "month": 34,
+          "realization": 1,
+          "discount_factor": 0.7633447541498025,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 120000.0,
+          "present_value": 4961.740901973716
+        },
+        {
+          "month": 35,
+          "realization": 1,
+          "discount_factor": 0.7573058906302806,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 126500.0,
+          "present_value": 4922.488289096824
+        },
+        {
+          "month": 36,
+          "realization": 1,
+          "discount_factor": 0.7513148009015775,
+          "benefit": 8000.0,
+          "cost": 1500.0,
+          "net": 6500.0,
+          "cumulative": 133000.0,
+          "present_value": 4883.546205860254
+        }
+      ]
+    },
+    "predictive": {
+      "name": "Predictive maintenance",
+      "implementation": 145000,
+      "annual_opex": 50000,
+      "annual_gross_savings": 200000.0,
+      "steady_annual_net": 150000.0,
+      "annual_hours_avoided": 1000.0,
+      "npv": 171590.52603699046,
+      "payback_months": 17.6,
+      "net_cash": 230000.0,
+      "roi": 0.7796610169491526,
+      "break_even_reduction": 0.15393201497351874,
+      "cash_flows": [
+        {
+          "month": 0,
+          "realization": 0,
+          "discount_factor": 1.0,
+          "benefit": 0,
+          "cost": 145000,
+          "net": -145000,
+          "cumulative": -145000,
+          "present_value": -145000.0
+        },
+        {
+          "month": 1,
+          "realization": 0,
+          "discount_factor": 0.992088943446991,
+          "benefit": 0.0,
+          "cost": 4166.666666666667,
+          "net": -4166.666666666667,
+          "cumulative": -149166.66666666666,
+          "present_value": -4133.703931029129
+        },
+        {
+          "month": 2,
+          "realization": 0,
+          "discount_factor": 0.9842404717097668,
+          "benefit": 0.0,
+          "cost": 4166.666666666667,
+          "net": -4166.666666666667,
+          "cumulative": -153333.3333333333,
+          "present_value": -4101.001965457362
+        },
+        {
+          "month": 3,
+          "realization": 0,
+          "discount_factor": 0.9764540896763105,
+          "benefit": 0.0,
+          "cost": 4166.666666666667,
+          "net": -4166.666666666667,
+          "cumulative": -157499.99999999997,
+          "present_value": -4068.5587069846274
+        },
+        {
+          "month": 4,
+          "realization": 0.5,
+          "discount_factor": 0.9687293061514642,
+          "benefit": 8333.333333333334,
+          "cost": 4166.666666666667,
+          "net": 4166.666666666667,
+          "cumulative": -153333.3333333333,
+          "present_value": 4036.3721089644346
+        },
+        {
+          "month": 5,
+          "realization": 0.5,
+          "discount_factor": 0.9610656338259428,
+          "benefit": 8333.333333333334,
+          "cost": 4166.666666666667,
+          "net": 4166.666666666667,
+          "cumulative": -149166.66666666666,
+          "present_value": 4004.4401409414286
+        },
+        {
+          "month": 6,
+          "realization": 0.5,
+          "discount_factor": 0.9534625892455922,
+          "benefit": 8333.333333333334,
+          "cost": 4166.666666666667,
+          "net": 4166.666666666667,
+          "cumulative": -145000.0,
+          "present_value": 3972.7607885233015
+        },
+        {
+          "month": 7,
+          "realization": 1,
+          "discount_factor": 0.9459196927808919,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -132500.0,
+          "present_value": 11823.99615976115
+        },
+        {
+          "month": 8,
+          "realization": 1,
+          "discount_factor": 0.9384364685966974,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -120000.0,
+          "present_value": 11730.455857458717
+        },
+        {
+          "month": 9,
+          "realization": 1,
+          "discount_factor": 0.9310124446222228,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -107500.0,
+          "present_value": 11637.655557777785
+        },
+        {
+          "month": 10,
+          "realization": 1,
+          "discount_factor": 0.9236471525212612,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -95000.0,
+          "present_value": 11545.589406515764
+        },
+        {
+          "month": 11,
+          "realization": 1,
+          "discount_factor": 0.9163401276626397,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -82500.0,
+          "present_value": 11454.251595782996
+        },
+        {
+          "month": 12,
+          "realization": 1,
+          "discount_factor": 0.9090909090909091,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -70000.0,
+          "present_value": 11363.636363636364
+        },
+        {
+          "month": 13,
+          "realization": 1,
+          "discount_factor": 0.9018990394972645,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -57500.0,
+          "present_value": 11273.737993715806
+        },
+        {
+          "month": 14,
+          "realization": 1,
+          "discount_factor": 0.894764065190697,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -45000.0,
+          "present_value": 11184.550814883713
+        },
+        {
+          "month": 15,
+          "realization": 1,
+          "discount_factor": 0.8876855360693732,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -32500.0,
+          "present_value": 11096.069200867165
+        },
+        {
+          "month": 16,
+          "realization": 1,
+          "discount_factor": 0.8806630055922402,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -20000.0,
+          "present_value": 11008.287569903003
+        },
+        {
+          "month": 17,
+          "realization": 1,
+          "discount_factor": 0.873696030750857,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": -7500.0,
+          "present_value": 10921.200384385713
+        },
+        {
+          "month": 18,
+          "realization": 1,
+          "discount_factor": 0.8667841720414474,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 5000.0,
+          "present_value": 10834.802150518093
+        },
+        {
+          "month": 19,
+          "realization": 1,
+          "discount_factor": 0.8599269934371745,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 17500.0,
+          "present_value": 10749.087417964682
+        },
+        {
+          "month": 20,
+          "realization": 1,
+          "discount_factor": 0.8531240623606339,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 30000.0,
+          "present_value": 10664.050779507923
+        },
+        {
+          "month": 21,
+          "realization": 1,
+          "discount_factor": 0.8463749496565661,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 42500.0,
+          "present_value": 10579.686870707077
+        },
+        {
+          "month": 22,
+          "realization": 1,
+          "discount_factor": 0.8396792295647828,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 55000.0,
+          "present_value": 10495.990369559786
+        },
+        {
+          "month": 23,
+          "realization": 1,
+          "discount_factor": 0.8330364796933087,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 67500.0,
+          "present_value": 10412.95599616636
+        },
+        {
+          "month": 24,
+          "realization": 1,
+          "discount_factor": 0.8264462809917354,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 80000.0,
+          "present_value": 10330.578512396693
+        },
+        {
+          "month": 25,
+          "realization": 1,
+          "discount_factor": 0.8199082177247857,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 92500.0,
+          "present_value": 10248.852721559822
+        },
+        {
+          "month": 26,
+          "realization": 1,
+          "discount_factor": 0.8134218774460882,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 105000.0,
+          "present_value": 10167.773468076102
+        },
+        {
+          "month": 27,
+          "realization": 1,
+          "discount_factor": 0.8069868509721573,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 117500.0,
+          "present_value": 10087.335637151966
+        },
+        {
+          "month": 28,
+          "realization": 1,
+          "discount_factor": 0.8006027323565819,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 130000.0,
+          "present_value": 10007.534154457273
+        },
+        {
+          "month": 29,
+          "realization": 1,
+          "discount_factor": 0.7942691188644154,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 142500.0,
+          "present_value": 9928.363985805192
+        },
+        {
+          "month": 30,
+          "realization": 1,
+          "discount_factor": 0.7879856109467703,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 155000.0,
+          "present_value": 9849.820136834629
+        },
+        {
+          "month": 31,
+          "realization": 1,
+          "discount_factor": 0.7817518122156131,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 167500.0,
+          "present_value": 9771.897652695163
+        },
+        {
+          "month": 32,
+          "realization": 1,
+          "discount_factor": 0.7755673294187581,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 180000.0,
+          "present_value": 9694.591617734475
+        },
+        {
+          "month": 33,
+          "realization": 1,
+          "discount_factor": 0.76943177241506,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 192500.0,
+          "present_value": 9617.89715518825
+        },
+        {
+          "month": 34,
+          "realization": 1,
+          "discount_factor": 0.7633447541498025,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 205000.0,
+          "present_value": 9541.80942687253
+        },
+        {
+          "month": 35,
+          "realization": 1,
+          "discount_factor": 0.7573058906302806,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 217500.0,
+          "present_value": 9466.323632878508
+        },
+        {
+          "month": 36,
+          "realization": 1,
+          "discount_factor": 0.7513148009015775,
+          "benefit": 16666.666666666668,
+          "cost": 4166.666666666667,
+          "net": 12500.0,
+          "cumulative": 230000.0,
+          "present_value": 9391.43501126972
+        }
+      ]
+    }
+  },
+  "incremental_npv": 69033.8443181257,
+  "incremental_break_even_reduction": 0.21135018362934288,
+  "basis": "All operating and cost inputs are illustrative assumptions. Pre-tax incremental cash flows versus doing nothing."
+}

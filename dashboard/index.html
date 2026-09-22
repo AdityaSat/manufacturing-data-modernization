@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A manufacturing data modernization prototype and transparent technology investment business case.">
+  <title>Manufacturing Intelligence | Investment Lab</title>
+  <link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview">M<span class="brand-dot">.</span><small>MANUFACTURING<br>INTELLIGENCE</small></a>
+    <p class="nav-label">INVESTMENT LAB</p>
+    <nav aria-label="Dashboard sections">
+      <button data-view="overview" class="active">01 <span>Machine health</span></button>
+      <button data-view="model">02 <span>Model evidence</span></button>
+      <button data-view="business">03 <span>Business case</span></button>
+      <button data-view="rollout">04 <span>Rollout plan</span></button>
+    </nav>
+    <div class="sidebar-bottom"><strong>Aditya Satrasala</strong><p>Independent portfolio project<br>Public synthetic data</p><a href="https://doi.org/10.24432/C5HS5C" target="_blank" rel="noopener">UCI AI4I 2020 ↗</a></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>DATA MODERNIZATION / MANUFACTURING</span><span class="status">Offline demonstration</span></header>
+    <div id="load-error" class="notice" hidden></div>
+    <section id="overview" class="view">
+      <div class="heading"><div><p class="eyebrow">01 / MACHINE HEALTH</p><h1>A clearer view of<br>machine conditions.</h1></div><div class="heading-note">From sensor observations<br>to reviewable alerts.</div></div>
+      <p class="notice">Synthetic observations, not a live fleet. Scores classify failures in the same observation. They do not establish advance warning.</p>
+      <div class="kpis" id="health-kpis" aria-live="polite"></div>
+      <div class="filters"><label>Product quality<select id="quality"><option value="all">All types</option><option value="L">L · Low</option><option value="M">M · Medium</option><option value="H">H · High</option></select></label><label class="check"><input type="checkbox" id="alerts-only"> Alerts only</label><label>Observation ID<input id="search-id" placeholder="e.g. 9200" inputmode="numeric"></label><button class="secondary" id="export">Export filtered CSV</button></div>
+      <div class="chart-row"><article class="panel wide"><div class="panel-heading"><h2>Operating conditions</h2><span>Holdout observations</span></div><div class="legend"><span class="dot green"></span> Below threshold <span class="dot orange"></span> Alert</div><div id="scatter" class="chart" role="img" aria-label="Scatter plot of torque against rotational speed"></div></article><article class="panel narrow"><h2>Review priorities</h2><p class="muted">Alerts support an operator's inspection decision.</p><div id="priority-list"></div><p class="small muted">Product quality is a product category. Each row is an observation, not a uniquely identified physical machine.</p></article></div>
+      <article class="panel"><div class="panel-heading"><h2>Observation register</h2><span id="register-count"></span></div><div class="table-wrap"><table><thead><tr><th>Observation</th><th>Type</th><th>Speed (rpm)</th><th>Torque (Nm)</th><th>Wear (min)</th><th>Model score</th><th>Review</th><th>Actual label</th></tr></thead><tbody id="register"></tbody></table></div><div class="pagination"><button id="prev" class="secondary">Previous</button><span id="page-label"></span><button id="next" class="secondary">Next</button></div></article>
+    </section>
+    <section id="model" class="view" hidden>
+      <p class="eyebrow">02 / MODEL EVIDENCE</p><h1>Useful detection.<br>Honest limitations.</h1><p class="lede">A random forest combines sensor readings with temperature gap, mechanical power, and wear × torque. The baseline uses three fixed single-sensor rules.</p>
+      <div class="kpis" id="model-kpis"></div>
+      <article class="panel"><h2>Results on untouched holdout data</h2><div class="table-wrap"><table><thead><tr><th>Approach</th><th>Precision</th><th>Recall</th><th>False alarms</th><th>Missed failures</th><th>Alerts</th></tr></thead><tbody id="model-comparison"></tbody></table></div><p class="small muted">Precision: true failures among alerts. Recall: captured failures among all failures. Average precision summarizes the full score ranking.</p></article>
+      <div class="chart-row"><article class="panel"><h2>How the experiment is separated</h2><div id="split-list"></div><p class="small muted">Contiguous UDI blocks limit adjacent-row mixing. UDI order is only a sequence proxy. A real pilot needs timestamped, asset-separated evaluation.</p></article><article class="panel"><h2>Threshold explorer</h2><label for="threshold">Alert threshold <strong id="threshold-value"></strong></label><input type="range" id="threshold" min="0.01" max="0.99" step="0.01"><p id="threshold-warning" class="small muted"></p><div id="threshold-results" class="mini-metrics"></div><button id="reset-threshold" class="secondary">Restore validated threshold</button><p class="small muted">Scores are uncalibrated. A score of 0.7 does not mean a validated 70% real-world failure probability.</p></article></div>
+      <article class="panel"><h2>Data and model controls</h2><ul class="reading-list"><li>Exclude identifiers, the target, and all five failure-mode labels from model inputs.</li><li>Fit preprocessing and the model on training data. Choose the threshold using validation F2 with a 10% alert-capacity ceiling.</li><li>Keep the test set separate from fitting and threshold selection. Report false positives and missed failures.</li><li id="quality-note"></li><li>Validate lead time and intervention outcomes in shadow mode before connecting alerts to maintenance actions.</li></ul></article>
+    </section>
+    <section id="business" class="view" hidden>
+      <p class="eyebrow">03 / BUSINESS CASE</p><h1>When does the<br>investment pay?</h1><p class="lede">Compare two complete options against doing nothing. Every financial input is an illustrative assumption, independent of the model's test scores.</p>
+      <div class="kpis" id="business-kpis" aria-live="polite"></div>
+      <div class="chart-row"><article class="panel narrow"><h2>Test the assumptions</h2><label for="reduction">Predictive downtime reduction <strong id="reduction-value"></strong></label><input type="range" id="reduction" min="0" max="50" step="1" value="25"><label for="loss">Loss per machine-hour <strong id="loss-value"></strong></label><input type="range" id="loss" min="50" max="500" step="10" value="200"><label for="downtime">Unplanned downtime <strong id="downtime-value"></strong></label><input type="range" id="downtime" min="1" max="10" step="0.5" value="5"><button id="reset-business" class="secondary">Reset assumptions</button><p class="small muted">20 critical assets. 4,000 scheduled hours each per year. Monitoring reduction stays at 12%. Use the Excel workbook to edit all inputs.</p></article><article class="panel wide"><div class="panel-heading"><h2>Cumulative cash flow</h2><span>USD, undiscounted</span></div><div class="legend"><span class="dot green"></span> Monitoring <span class="dot orange"></span> Predictive maintenance</div><div id="cash-chart" class="chart" role="img" aria-label="Cumulative cash flow over 36 months"></div></article></div>
+      <article class="panel"><h2>Investment comparison</h2><div class="table-wrap"><table><thead><tr><th>Metric</th><th>Basic monitoring</th><th>Predictive maintenance</th></tr></thead><tbody id="business-comparison"></tbody></table></div><p id="business-decision" class="decision"></p></article>
+      <article class="panel"><h2>What the estimate includes</h2><p>Implementation includes connectivity, integration, development, training, and contingency. Recurring costs include the platform, support, and an additional inspection allowance for predictive maintenance.</p><p>Benefits start after a three-month pilot, reach 50% in months 4–6, and reach 100% in month 7. Recurring costs start in month 1. The model discounts monthly cash flows at a 10% effective annual rate.</p><p class="muted">Use contribution margin or avoidable loss, not gross revenue. The loss estimate must avoid counting the same line stoppage against multiple machines. Taxes, financing, terminal value, and inflation are excluded. No separate labor or energy savings are added.</p></article>
+    </section>
+    <section id="rollout" class="view" hidden>
+      <p class="eyebrow">04 / ROLLOUT PLAN</p><h1>A 90-day pilot<br>with a decision gate.</h1><p class="lede">Recommend a centralized monitoring foundation and a limited predictive maintenance pilot. Release the remaining rollout budget only after factory evidence supports the incremental investment.</p>
+      <article class="panel"><h2>Proposed implementation roadmap</h2><div class="timeline"><div><span>DAY 01–30</span><h3>Establish the baseline</h3><p>Operations and the data engineer map critical assets, reconcile downtime records, and land sensor readings in a governed table.</p><p><strong>Gate:</strong> ≥95% required data completeness and an agreed downtime cost definition.</p></div><div><span>DAY 31–60</span><h3>Run in shadow mode</h3><p>The reliability engineer reviews silent alerts. Record false alarms, usable warning time, and whether an intervention was possible.</p><p><strong>Gate:</strong> Proposed pilot targets: ≥70% recall, ≥50% precision, and ≥24 hours actionable lead time. These are unvalidated targets.</p></div><div><span>DAY 61–90</span><h3>Decide whether to scale</h3><p>Finance compares attributable avoided downtime with actual platform, inspection, and implementation costs. The plant manager owns the decision.</p><p><strong>Gate:</strong> Positive incremental NPV under conservative assumptions and an acceptable maintenance workload.</p></div></div></article>
+      <article class="panel"><h2>Risks and responses</h2><div class="table-wrap"><table><thead><tr><th>Risk</th><th>Response</th><th>Accountable owner</th></tr></thead><tbody><tr><td>Synthetic data does not transfer</td><td>Validate on time-stamped factory data and unseen assets</td><td>Data science lead</td></tr><tr><td>Alerts arrive too late or overwhelm crews</td><td>Measure lead time and cap inspection workload</td><td>Reliability engineer</td></tr><tr><td>Savings are overstated</td><td>Use matched baseline periods and count overlapping downtime once</td><td>Finance partner</td></tr><tr><td>OT connectivity introduces exposure</td><td>Use read-only ingestion, network separation, least privilege, and an audit log</td><td>OT security owner</td></tr></tbody></table></div></article>
+    </section>
+    <footer>Manufacturing Data Modernization & AI Business Case · Independent demonstration · September 2026</footer>
+  </main>
+</body>
+</html>

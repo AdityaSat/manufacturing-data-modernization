@@ -1,0 +1,2 @@
+# Preserve the original UCI CSV bytes, including its CRLF line endings.
+data/raw/ai4i2020.csv -text whitespace=cr-at-eol

@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {evaluateBusiness} from '../dashboard/business.js';
+const a=JSON.parse(fs.readFileSync(new URL('../config/business_assumptions.json',import.meta.url)));
+const expected=JSON.parse(fs.readFileSync(new URL('../reports/business_case_results.json',import.meta.url)));
+const actual=evaluateBusiness(a);
+for(const option of ['monitoring','predictive'])for(const key of ['npv','payback_months','net_cash','steady_annual_net'])assert.ok(Math.abs(actual.options[option][key]-expected.options[option][key])<1e-7,`${option} ${key}`);
+assert.ok(Math.abs(actual.incremental_break_even_reduction-expected.incremental_break_even_reduction)<1e-10);
+const zero=structuredClone(a);zero.options.predictive.downtime_reduction=0;
+assert.equal(evaluateBusiness(zero).options.predictive.payback_months,null);
+const breakEven=structuredClone(a);breakEven.options.predictive.downtime_reduction=actual.incremental_break_even_reduction;
+assert.ok(Math.abs(evaluateBusiness(breakEven).incremental_npv)<1e-7);
+console.log('Dashboard math matches Python outputs and break-even boundary.');

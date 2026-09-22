@@ -1,0 +1,26 @@
+{
+  "currency": "USD",
+  "horizon_months": 36,
+  "assets": 20,
+  "scheduled_hours_per_asset_year": 4000,
+  "unplanned_downtime_rate": 0.05,
+  "loss_per_machine_hour": 200,
+  "discount_rate_annual": 0.10,
+  "pilot_months": 3,
+  "partial_ramp_months": 3,
+  "partial_ramp_realization": 0.5,
+  "options": {
+    "monitoring": {
+      "name": "Basic monitoring",
+      "downtime_reduction": 0.12,
+      "implementation": {"Sensors and connectivity": 8000, "Data integration": 22000, "Dashboard or model development": 15000, "Training and process change": 10000, "Contingency": 10000},
+      "annual_operating": {"Platform and compute": 6000, "Support and maintenance": 12000, "Incremental inspections": 0}
+    },
+    "predictive": {
+      "name": "Predictive maintenance",
+      "downtime_reduction": 0.25,
+      "implementation": {"Sensors and connectivity": 18000, "Data integration": 42000, "Dashboard or model development": 40000, "Training and process change": 20000, "Contingency": 25000},
+      "annual_operating": {"Platform and compute": 15000, "Support and maintenance": 27000, "Incremental inspections": 8000}
+    }
+  }
+}

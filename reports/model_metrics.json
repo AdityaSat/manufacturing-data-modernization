@@ -1,0 +1,98 @@
+{
+  "dataset": {
+    "name": "UCI AI4I 2020",
+    "doi": "https://doi.org/10.24432/C5HS5C",
+    "synthetic": true,
+    "rows": 10000,
+    "failures": 339,
+    "failure_rate": 0.0339,
+    "sha256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e"
+  },
+  "quality": {
+    "rows": 10000,
+    "missing_cells": 0,
+    "duplicate_ids": 0,
+    "label_mode_disagreements": 27,
+    "note": "Original target retained even where component failure flags disagree."
+  },
+  "seed": 42,
+  "sklearn_version": "1.8.0",
+  "features": [
+    "product_type",
+    "air_temperature_k",
+    "process_temperature_k",
+    "rotational_speed_rpm",
+    "torque_nm",
+    "tool_wear_min",
+    "temperature_gap_k",
+    "power_w",
+    "wear_torque"
+  ],
+  "threshold": 0.14,
+  "threshold_policy": "Maximum validation F2 among thresholds 0.01..0.99 with at most 10% validation alerts. Higher threshold wins ties.",
+  "split": {
+    "train": {
+      "rows": 6000,
+      "failures": 255,
+      "udi_min": 1,
+      "udi_max": 6000
+    },
+    "validation": {
+      "rows": 2000,
+      "failures": 45,
+      "udi_min": 6001,
+      "udi_max": 8000
+    },
+    "test": {
+      "rows": 2000,
+      "failures": 39,
+      "udi_min": 8001,
+      "udi_max": 10000
+    }
+  },
+  "test": {
+    "model": {
+      "rows": 2000,
+      "failures": 39,
+      "tn": 1922,
+      "fp": 39,
+      "fn": 10,
+      "tp": 29,
+      "precision": 0.4264705882352941,
+      "recall": 0.7435897435897436,
+      "f2": 0.6473214285714286,
+      "alert_rate": 0.034,
+      "average_precision": 0.7611083555044246,
+      "roc_auc": 0.9522352541220466
+    },
+    "monitoring": {
+      "rows": 2000,
+      "failures": 39,
+      "tn": 1887,
+      "fp": 74,
+      "fn": 17,
+      "tp": 22,
+      "precision": 0.22916666666666666,
+      "recall": 0.5641025641025641,
+      "f2": 0.4365079365079365,
+      "alert_rate": 0.048,
+      "average_precision": null,
+      "roc_auc": null
+    }
+  },
+  "validation": {
+    "rows": 2000,
+    "failures": 45,
+    "tn": 1913,
+    "fp": 42,
+    "fn": 3,
+    "tp": 42,
+    "precision": 0.5,
+    "recall": 0.9333333333333333,
+    "f2": 0.7954545454545454,
+    "alert_rate": 0.042,
+    "average_precision": 0.8621152473431529,
+    "roc_auc": 0.9750951974992896
+  },
+  "limitation": "Contemporaneous synthetic failure detection. No timestamps or physical machine identities. No demonstrated advance warning, real-factory accuracy, or causal downtime savings. Scores are uncalibrated rankings."
+}
