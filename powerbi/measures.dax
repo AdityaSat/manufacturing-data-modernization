@@ -1,0 +1,85 @@
+// DAX for the "Machine Health and Failure Drivers" report.
+// Table names assumed: ai4i, FailureModes, holdout, Method (see README.md for the model).
+// "Calculated column" = Table tools > New column.  "Measure" = Home > New measure.
+// Set Failure Rate and the *Recall / *Precision measures to Percentage, 1 decimal.
+
+// ===== Calculated columns on ai4i ==========================================
+
+// Mechanical power in watts: torque (N*m) * angular speed (rad/s)
+Power W = ai4i[Torque Nm] * ai4i[Rotational Speed rpm] * 2 * PI() / 60
+
+// 50-minute tool-wear buckets. Capped at 200 because the 250+ bucket has only 2 rows
+// (both failures), which would draw a misleading 100% column.
+Wear Bucket = MIN ( FLOOR ( ai4i[Tool Wear Min], 50 ), 200 )
+
+// Axis label. Set "Sort by column" to Wear Bucket so it orders numerically.
+Wear Bucket Label =
+SWITCH (
+    ai4i[Wear Bucket],
+    0, "0-49",
+    50, "50-99",
+    100, "100-149",
+    150, "150-199",
+    "200+"
+)
+
+// Power failure (PWF) rule from the dataset documentation: power below 3,500 W
+// or above 9,000 W. In this file all 95 PWF rows fall in those bands and no other row does.
+Power Band =
+SWITCH (
+    TRUE (),
+    ai4i[Power W] < 3500, "Low (<3,500 W)",
+    ai4i[Power W] > 9000, "High (>9,000 W)",
+    "Normal"
+)
+
+// Scatter legend field
+Outcome = IF ( ai4i[Machine failure] = 1, "Failure", "No failure" )
+
+// ===== Overview measures ====================================================
+
+Observations = COUNTROWS ( ai4i )
+Failures = SUM ( ai4i[Machine failure] )
+Failure Rate = DIVIDE ( [Failures], [Observations] )
+
+// For the failure-mode bar chart (axis: FailureModes[Failure Mode]).
+// A machine with two modes counts once per mode, so bars can sum above [Failures].
+Mode Failures = COUNTROWS ( FailureModes )
+
+// ===== Model results page (holdout, 2,000 rows, 39 failures) ================
+
+// Small helper table for the two-method comparison visuals
+Method =
+DATATABLE (
+    "Method", STRING,
+    { { "Basic monitoring" }, { "Random forest" } }
+)
+
+Holdout Failures = SUM ( holdout[machine_failure] )
+
+Model Caught =
+CALCULATE ( COUNTROWS ( holdout ), holdout[machine_failure] = 1, holdout[model_alert] = 1 )
+Monitoring Caught =
+CALCULATE ( COUNTROWS ( holdout ), holdout[machine_failure] = 1, holdout[monitoring_alert] = 1 )
+
+Model Alerts = SUM ( holdout[model_alert] )
+Monitoring Alerts = SUM ( holdout[monitoring_alert] )
+
+// Use these two (driven by the Method table) in one clustered bar chart
+Caught =
+SWITCH (
+    SELECTEDVALUE ( Method[Method] ),
+    "Basic monitoring", [Monitoring Caught],
+    "Random forest", [Model Caught]
+)
+Missed = [Holdout Failures] - [Caught]
+Recall = DIVIDE ( [Caught], [Holdout Failures] )
+Precision =
+DIVIDE (
+    [Caught],
+    SWITCH (
+        SELECTEDVALUE ( Method[Method] ),
+        "Basic monitoring", [Monitoring Alerts],
+        "Random forest", [Model Alerts]
+    )
+)

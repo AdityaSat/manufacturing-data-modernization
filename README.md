@@ -126,6 +126,7 @@ The build refreshes SQL, JSON results, holdout CSV, and the portable dashboard. 
 | `dashboard/` | Browser interface, portable copy, and tested calculator |
 | `config/business_assumptions.json` | Authoritative base assumptions for Python/dashboard rebuilds |
 | `data/raw/ai4i2020.csv` | Original public synthetic data |
+| `powerbi/` | Power Query, DAX, and build guide for a Power BI failure-drivers report |
 | `reports/` | Workbook, deck, metrics, cash flows, and holdout predictions |
 | `docs/` | Architecture, model card, methodology, and interview walkthrough |
 
